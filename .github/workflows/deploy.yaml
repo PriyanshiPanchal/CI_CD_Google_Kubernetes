@@ -43,24 +43,24 @@ jobs:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
 
 
-    - name: 'Build Docker image'
-      run: |
-        docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest .
+    # - name: 'Build Docker image'
+    #   run: |
+    #     docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest .
 
-    - name: 'Push Docker image'
-      run: |
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest
+    # - name: 'Push Docker image'
+    #   run: |
+    #     docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest
 
-    - name: 'Get GKE Credentials'
-      run: |
-        gcloud container clusters get-credentials ${{ secrets.GKE_CLUSTER_NAME }} --region ${{ secrets.GKE_CLUSTER_REGION }} --project ${{ secrets.GCP_PROJECT_ID }}
+    # - name: 'Get GKE Credentials'
+    #   run: |
+    #     gcloud container clusters get-credentials ${{ secrets.GKE_CLUSTER_NAME }} --region ${{ secrets.GKE_CLUSTER_REGION }} --project ${{ secrets.GCP_PROJECT_ID }}
 
-    - name: 'Set up kubectl'
-      uses: 'azure/setup-kubectl@v3'
-      with:
-        version: 'latest'
+    # - name: 'Set up kubectl'
+    #   uses: 'azure/setup-kubectl@v3'
+    #   with:
+    #     version: 'latest'
 
-    - name: 'Deploy to GKE'
-      run: |
-        kubectl apply -f k8s/deployment.yaml
-        kubectl apply -f k8s/service.yaml
+    # - name: 'Deploy to GKE'
+    #   run: |
+    #     kubectl apply -f k8s/deployment.yaml
+    #     kubectl apply -f k8s/service.yaml
