@@ -42,6 +42,7 @@ jobs:
       with:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
 
+
     - name: 'Build Docker image'
       run: |
         docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest .
