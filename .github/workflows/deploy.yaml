@@ -43,13 +43,13 @@ jobs:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
 
 
-    # - name: 'Build Docker image'
-    #   run: |
-    #     docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest .
+    - name: 'Build Docker image'
+      run: |
+        docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest .
 
-    # - name: 'Push Docker image'
-    #   run: |
-    #     docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest
+    - name: 'Push Docker image'
+      run: |
+        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest
 
     # - name: 'Get GKE Credentials'
     #   run: |
