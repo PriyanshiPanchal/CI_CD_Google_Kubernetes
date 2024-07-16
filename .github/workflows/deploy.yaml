@@ -60,7 +60,7 @@ jobs:
 
     - name: 'Get GKE Credentials'
       run: |
-        gcloud container clusters get-credentials ${{ secrets.GKE_CLUSTER_NAME }} --region ${{ secrets.GKE_CLUSTER_REGION }} --project ${{ secrets.GCP_PROJECT_ID }}
+        gcloud container clusters get-credentials github-cluster-1 --region us-central1 --project fenixwork-projects
 
     - name: 'Set up kubectl'
       uses: 'azure/setup-kubectl@v3'
