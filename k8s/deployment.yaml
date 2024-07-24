@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: my-app-2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: my-app-2
   template:
     metadata:
       labels:
-        app: my-app
+        app: my-app-2
     spec:
       containers:
-      - name: my-app
-        image: gcr.io/fenixwork-projects/my-app:latest
+      - name: my-app-2
+        image: gcr.io/fenixwork-projects/my-app-2:latest
         ports:
         - containerPort: 8080

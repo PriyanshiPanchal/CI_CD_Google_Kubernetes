@@ -47,7 +47,7 @@ jobs:
 
     - name: 'Build Docker image'
       run: |
-        docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest .
+        docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app-2:latest .
 
     - name: 'Authenticate Docker with GCR'
       run: |
@@ -56,7 +56,7 @@ jobs:
     ## Pushing Docker Image
     - name: 'Push Docker image'
       run: |
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest
+        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app-2:latest
 
     - name: Install gke-gcloud-auth-plugin
       run: |
